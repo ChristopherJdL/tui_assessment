@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodeInsider.Tui.Assessment.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeInsider.Tui.Assessment.Controllers
@@ -9,11 +10,17 @@ namespace CodeInsider.Tui.Assessment.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        internal TuiDbContext DbContext { get; private set; }
+
+        public ValuesController(TuiDbContext dbContext)
+        {
+            this.DbContext = dbContext;
+        }
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<int> Get()
         {
-            return new string[] { "value1", "value2" };
+            return this.DbContext.Flights.Select(o => o.Id);
         }
 
         // GET api/values/5
@@ -25,8 +32,10 @@ namespace CodeInsider.Tui.Assessment.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post()
         {
+            this.DbContext.Flights.Add(new Flight());
+            this.DbContext.SaveChanges();
         }
 
         // PUT api/values/5
