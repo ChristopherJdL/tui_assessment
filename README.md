@@ -1,7 +1,8 @@
-## README ##
+## README :book: ##
 
 Welcome ! 
 
+My name is Christopher JdL.
 This assessment repository is divided in 3 folders.
 
 - `part1` :arrow_right: Represents the Programming Exercise. It is written with ASP.NET Core 2.0 and C#. Here are the running instructions:
