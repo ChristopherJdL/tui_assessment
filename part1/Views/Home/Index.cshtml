@@ -5,35 +5,94 @@
     IEnumerable<Airport> airports = ViewBag.Airports;
     IEnumerable<Flight> flights = ViewBag.Flights;
 }
-
-<select name="Departure" id="departure">
-@foreach (var airport in airports){
-    <option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
-    }
-</select>
+<p></p>
+<div id="header-container">
+  <div class="selectContainer">
+        <h4>Departure</h4>
+        <select name="Departure" id="departure">
+		@foreach (var airport in airports){
+    		<option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
+    	}
+	</select>
+  </div>
 ✈️
-<select name="Arrival" id="arrival">
-@foreach (var airport in airports){
-    <option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
-    }
-</select>
-<button onclick="addFlight()">Create flight</button>
-
-<div id="flightList">
-<table>
+  <div class="selectContainer">
+  <h4>Arrival</h4>
+	<select name="Arrival" id="arrival">
+	@foreach (var airport in airports){
+    	<option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
+    	}
+	</select>
+  </div>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="addFlight()">Create flight</button>
+  </div>
+<p></p>
+	<div id="flightList">
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <tr>
-        <th>Flight Number</th>
-        <th>Departure</th>
-        <th>Arrival</th>
+        <th class="mdl-data-table__cell--non-numeric">Flight Number</th>
+        <th class="mdl-data-table__cell--non-numeric">Departure</th>
+        <th class="mdl-data-table__cell--non-numeric">Arrival</th>
     </tr>
-@foreach (var flight in flights){
+	@foreach (var flight in flights){
 
         <tr>
         <td><text>TUI00</text>@flight.Id</td>
         <td>@flight.DepartureAirport.Name (@flight.DepartureAirport.IataCode)</td>
         <td>@flight.ArrivalAirport.Name (@flight.ArrivalAirport.IataCode)</td>
-        <td><button class="edit-flight-button" onclick="editFlight(@flight.Id)">Edit</button></td>
+        <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored edit-flight-button"
+					value="@flight.Id"><i class="material-icons">edit</i></button></td>
         </tr>
     }
-</table>
-</div>
+	</table>
+	</div>
+
+	<section id="editDialogSection">
+  <dialog class="mdl-dialog">
+    <h3 style="color:blueviolet" class="mdl-dialog__title">Edit flight <span id="editedFlightId"></span></h3>
+    <div class="mdl-dialog__content">
+  <div class="selectContainerModal">
+        <h4 style="color: blueviolet;">Departure</h4>
+        <select name="Departure" id="departureModal">
+		@foreach (var airport in airports){
+    		<option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
+    	}
+	</select>
+  </div>
+       <div class="selectContainerModal">
+  <h4 style="color: blueviolet">Arrival</h4>
+	<select name="Arrival" id="arrivalModal">
+	@foreach (var airport in airports){
+    	<option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
+    	}
+	</select>
+  </div>
+  </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button" id="sendEdit">Edit</button>
+      <button type="button" class="mdl-button close">Cancel</button>
+    </div>
+  </dialog>
+	</section>
+
+	<script>
+    var dialog = document.querySelector('dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    $(".edit-flight-button").click(function(event){
+      var flightId = event.currentTarget.value;
+      var flight = getFlight(flightId);
+		  dialog.showModal();
+      $("#editedFlightId").text("TUI00" + flightId);
+      $("#sendEdit").click(function (event){
+        editFlight(flightId);
+        dialog.close();
+        //refresh page
+        location = location;
+      });
+	});
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+  </script>
