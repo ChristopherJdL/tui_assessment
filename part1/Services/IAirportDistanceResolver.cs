@@ -12,7 +12,7 @@ namespace  CodeInsider.Tui.Assessment.Services
         /// <returns></returns>
         double ResolveDistance(Airport origin, Airport destination);
         /// <summary>
-        /// Resolves the Distance in Kilometers between 2 Airports.
+        /// Resolves the duration in seconds of a flight between 2 Airports.
         /// </summary>
         /// <param name="origin">Origin Airport</param>
         /// <param name="destination">Destination Airport</param>
