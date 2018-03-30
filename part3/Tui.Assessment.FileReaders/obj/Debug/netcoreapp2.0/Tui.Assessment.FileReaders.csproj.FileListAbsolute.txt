@@ -1,0 +1,10 @@
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\bin\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.deps.json
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\bin\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.runtimeconfig.json
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\bin\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.runtimeconfig.dev.json
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\bin\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.dll
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\bin\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.pdb
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\obj\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.csproj.CoreCompileInputs.cache
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\obj\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.AssemblyInfoInputs.cache
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\obj\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.AssemblyInfo.cs
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\obj\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.dll
+C:\Users\Christophine\Documents\GitHub\tui_assessment\part3\Tui.Assessment.FileReaders\obj\Debug\netcoreapp2.0\Tui.Assessment.FileReaders.pdb
