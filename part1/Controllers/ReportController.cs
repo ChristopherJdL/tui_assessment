@@ -19,6 +19,7 @@ namespace CodeInsider.Tui.Assessment.Controllers
         public IActionResult Index()
         {
             this.ViewBag.Flights = this.dbContext.Flights.Include(f => f.ArrivalAirport).Include(f => f.DepartureAirport);
+            this.ViewBag.Airports = this.dbContext.Airports;
             return View();
         }
     }

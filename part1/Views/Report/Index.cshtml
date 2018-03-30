@@ -3,10 +3,12 @@
 @{
     Layout = "_Layout";
     IEnumerable<Flight> flights = ViewBag.Flights;
+    IEnumerable<Airport> airports = ViewBag.Airports;
 }
 
 <div id="detailedFlightList">
 <h3 style="color: white;">Detailed Report</h3>
+<h5 style="color: white;">Flight list</h5>
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <tr>
         <th>Flight Number</th>
@@ -22,6 +24,26 @@
         <td>@flight.ArrivalAirport?.Name (@flight.ArrivalAirport?.IataCode)</td>
         <td>@(flight.FlightDistanceKilometers != 0 ? flight.FlightDistanceKilometers.ToString() : "N/A")</td>
         <td>@(flight.FuelConsumptionLiters != 0 ? flight.FuelConsumptionLiters.ToString() : "N/A")</td>
+        </tr>
+    }
+</table>
+
+<h5 style="color: white;">Airport list</h5>
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <tr>
+        <th>Database Id</th>
+        <th>IATA Code</th>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+@foreach (var airport in airports){
+        <tr>
+        <td>@airport.Id</td>
+        <td>@airport.IataCode </td>
+        <td>@airport.Name </td>
+        <td>@airport.Latitude</td>
+        <td>@airport.Longitude</td>
         </tr>
     }
 </table>
