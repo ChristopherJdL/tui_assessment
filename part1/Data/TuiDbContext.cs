@@ -6,7 +6,7 @@ namespace CodeInsider.Tui.Assessment.Data
     {
         private const string ConnectionString = "Data Source=CodeInsider.Tui.Assessment.db";
         public DbSet<Flight> Flights {get; set;}
-
+        public DbSet<Airport> Airports {get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(ConnectionString);

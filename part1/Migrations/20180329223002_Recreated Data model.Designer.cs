@@ -10,9 +10,10 @@ using System;
 namespace CodeInsider.Tui.Assessment.Migrations
 {
     [DbContext(typeof(TuiDbContext))]
-    partial class TuiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180329223002_Recreated Data model")]
+    partial class RecreatedDatamodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

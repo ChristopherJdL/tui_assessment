@@ -37,6 +37,7 @@ namespace CodeInsider.Tui.Assessment
             }
 
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }

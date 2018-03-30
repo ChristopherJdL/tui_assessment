@@ -1,0 +1,19 @@
+@using CodeInsider.Tui.Assessment.Data;
+
+@{
+    Layout = "_Layout";
+    IEnumerable<Airport> airports = ViewBag.Airports;
+}
+
+<select name="Departure" id="departure">
+@foreach (var airport in airports){
+    <option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
+    }
+</select>
+✈️
+<select name="Arrival" id="arrival">
+@foreach (var airport in airports){
+    <option value="@airport.IataCode">@airport.Name (@airport.IataCode)</option>
+    }
+</select>
+<button onclick="addFlight()">Create flight</button>
