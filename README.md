@@ -10,6 +10,6 @@ This assessment repository is divided in 3 folders.
   - Go to `part1/`
   - Inside `part1/` folder: With a terminal, restore the packages `dotnet restore`
   - Inside `part1/` folder: Launch the web app `dotnet run`
-  - Open a web browser with localhost:5000/.
+  - Open a web browser with http://localhost:5000/.
 - `part2` :arrow_right: Represents the answer to question 2
 - `part3` :arrow_right: Represents the answer to question 3
