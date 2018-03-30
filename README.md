@@ -1,5 +1,7 @@
 ## README :book: ##
 
+![Screenshot](https://tof.cx/images/2018/03/31/4bfc0175d97364e82ec59546f751ebdc.jpg)
+
 Welcome ! 
 
 My name is Christopher JdL.
@@ -16,4 +18,3 @@ This assessment repository is divided in 3 folders.
 - `part2` :arrow_right: Represents the answer to question 2
 - `part3` :arrow_right: Represents the answer to question 3
 
-![Screenshot](https://tof.cx/images/2018/03/31/4bfc0175d97364e82ec59546f751ebdc.jpg)
