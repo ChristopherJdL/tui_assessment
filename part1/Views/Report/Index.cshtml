@@ -1,0 +1,28 @@
+@using CodeInsider.Tui.Assessment.Data;
+
+@{
+    Layout = "_Layout";
+    IEnumerable<Flight> flights = ViewBag.Flights;
+}
+
+<div id="detailedFlightList">
+<h1>Detailed Report</h1>
+<table>
+    <tr>
+        <th>Flight Number</th>
+        <th>Departure</th>
+        <th>Arrival</th>
+        <th>Flight distance (km)</th>
+        <th>Fuel consumption (liters)</th>
+    </tr>
+@foreach (var flight in flights){
+        <tr>
+        <td><text>TUI00</text>@flight.Id</td>
+        <td>@flight.DepartureAirport?.Name (@flight.DepartureAirport?.IataCode)</td>
+        <td>@flight.ArrivalAirport?.Name (@flight.ArrivalAirport?.IataCode)</td>
+        <td>@(flight.FlightDistanceKilometers != 0 ? flight.FlightDistanceKilometers.ToString() : "N/A")</td>
+        <td>@(flight.FuelConsumptionLiters != 0 ? flight.FuelConsumptionLiters.ToString() : "N/A")</td>
+        </tr>
+    }
+</table>
+</div>

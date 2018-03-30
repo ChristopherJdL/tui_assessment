@@ -11,3 +11,8 @@ function addFlight(params) {
     });
     
 }
+
+function editFlight()
+{
+    
+}

@@ -22,7 +22,7 @@
 <div id="flightList">
 <table>
     <tr>
-        <th>Id</th>
+        <th>Flight Number</th>
         <th>Departure</th>
         <th>Arrival</th>
     </tr>
@@ -32,6 +32,7 @@
         <td><text>TUI00</text>@flight.Id</td>
         <td>@flight.DepartureAirport.Name (@flight.DepartureAirport.IataCode)</td>
         <td>@flight.ArrivalAirport.Name (@flight.ArrivalAirport.IataCode)</td>
+        <td><button class="edit-flight-button" onclick="editFlight(@flight.Id)">Edit</button></td>
         </tr>
     }
 </table>

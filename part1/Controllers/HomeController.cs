@@ -1,5 +1,6 @@
 using CodeInsider.Tui.Assessment.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeInsider.Tui.Assessment.Controllers
 {
@@ -17,7 +18,7 @@ namespace CodeInsider.Tui.Assessment.Controllers
         public IActionResult Index()
         {
             this.ViewBag.Airports = this.DbContext.Airports;
-            this.ViewBag.Flights = this.DbContext.Flights;
+            this.ViewBag.Flights = this.DbContext.Flights.Include(f => f.ArrivalAirport).Include(f => f.DepartureAirport);
             return View();
         }
     }

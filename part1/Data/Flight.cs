@@ -7,5 +7,7 @@ namespace CodeInsider.Tui.Assessment.Data
         public Airport DepartureAirport { get; set; }
         public int ArrivalAirportId {get; set;}
         public Airport ArrivalAirport {get; set;}
+        public double FlightDistanceKilometers {get; set;}
+        public double FuelConsumptionLiters {get; set;}
     }
 }

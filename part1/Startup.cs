@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CodeInsider.Tui.Assessment.Data;
+using CodeInsider.Tui.Assessment.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +27,8 @@ namespace CodeInsider.Tui.Assessment
         {
             services.AddMvc();
             services.AddDbContext<TuiDbContext>();
+            services.AddSingleton<IAirportDistanceResolver, HaversineAirportDistanceResolver>();
+            services.AddSingleton<IFuelConsumptionService, FuelConsumptionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
