@@ -17,6 +17,7 @@ namespace CodeInsider.Tui.Assessment.Controllers
         public IActionResult Index()
         {
             this.ViewBag.Airports = this.DbContext.Airports;
+            this.ViewBag.Flights = this.DbContext.Flights;
             return View();
         }
     }

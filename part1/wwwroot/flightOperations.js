@@ -4,6 +4,10 @@ function addFlight(params) {
     $.post("/Flight", {departureIata : airportCodeDeparture, arrivalIata: airportCodeArrival})
     .fail(function(data){
         console.error(data.statusCode())
+    })
+    .done(function(){
+        //refresh page
+        location = location;
     });
     
 }

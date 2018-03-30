@@ -41,20 +41,29 @@ namespace CodeInsider.Tui.Assessment.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("AirportId");
+                    b.Property<int>("ArrivalAirportId");
+
+                    b.Property<int>("DepartureAirportId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AirportId");
+                    b.HasIndex("ArrivalAirportId");
+
+                    b.HasIndex("DepartureAirportId");
 
                     b.ToTable("Flights");
                 });
 
             modelBuilder.Entity("CodeInsider.Tui.Assessment.Data.Flight", b =>
                 {
-                    b.HasOne("CodeInsider.Tui.Assessment.Data.Airport", "Airport")
+                    b.HasOne("CodeInsider.Tui.Assessment.Data.Airport", "ArrivalAirport")
                         .WithMany()
-                        .HasForeignKey("AirportId")
+                        .HasForeignKey("ArrivalAirportId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CodeInsider.Tui.Assessment.Data.Airport", "DepartureAirport")
+                        .WithMany()
+                        .HasForeignKey("DepartureAirportId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
