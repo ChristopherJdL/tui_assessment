@@ -35,9 +35,13 @@ body {
 	width: 320px;
   height: 55px;
 	left: 50%;
-  top: 50%;
-	margin-left: -160px;
-  margin-top: -87px;
+	margin-left: auto;
+  margin-top: auto;
+}
+#flightList {
+  display: block;
+  
+  position: absolute;
 }
 
 h4
